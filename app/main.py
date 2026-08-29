@@ -20,7 +20,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(system.router)
+app.include_router(system.router, prefix="/api/system")
 
 app.include_router(chat.router, prefix="/api/ai")
 
