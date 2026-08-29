@@ -3,11 +3,14 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.routes import system
 from app.api.routes.ai import chat
+from app.core.database import init_database
 
 app = FastAPI(
     title="PROJECT API",
     version="1.0.0"
 )
+
+init_database()
 
 app.add_middleware(
     CORSMiddleware,
